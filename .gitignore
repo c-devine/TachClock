@@ -1,4 +1,5 @@
 Release/
+libraries/
 .cproject
 .settings
 /spec.d
