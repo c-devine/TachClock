@@ -2,7 +2,7 @@
 //This is a automatic generated file
 //Please do not modify this file
 //If you touch this file your change will be overwritten during the next build
-//This file has been generated on 2019-03-31 17:53:26
+//This file has been generated on 2019-04-13 17:32:31
 
 #include "Arduino.h"
 #include "TachClock.h"
@@ -12,7 +12,9 @@
 
 void setup() ;
 void loop() ;
-uint32_t getButton()  ;
+void setFuel(uint8_t minutes) ;
+bool processButton() ;
+uint32_t getButton() ;
 void printTime() ;
 
 #include "TachClock.ino"

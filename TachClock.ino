@@ -1,6 +1,5 @@
 #include "TachClock.h"
 #include <RTClib.h>
-
 #include "FM.h"
 #include "Led.h"
 
@@ -14,15 +13,23 @@ char daysOfTheWeek[7][12] = { "Sunday", "Monday", "Tuesday", "Wednesday",
 
 uint32_t hourLows[] = { 61000, 31000, 20000, 14600, 11600, 9500, 7950, 6900,
 		6100, 5400, 4850, 4500 };
+uint8_t fuelPins[] = FUEL_PINS;
 
-//The setup function is called once at startup of the sketch
 void setup() {
 
+	Serial.begin(9600);
 	pinMode(BUTTON_PIN, INPUT_PULLUP);
+	pinMode(BUTTON_GND, OUTPUT);
+	digitalWrite(BUTTON_GND, LOW);
 	pinMode(NEUTRAL_PIN, INPUT);
 
+	// set up the fuel pins
+	for (uint8_t i = 0; i< 4; i ++) {
+		pinMode(fuelPins[i], INPUT);
+	}
+
+
 	led.on();
-	Serial.begin(9600);
 
 	Serial.println("Starting RTC");
 
@@ -44,15 +51,16 @@ void setup() {
 	printTime();
 }
 
-// The loop function is called in an endless loop
 void loop() {
 
+	static bool buttonPressed = false;
 	static uint32_t lastMillis = 0;
-	uint32_t currentMillis = millis();
 	static uint32_t rpmPeriod = 10000;
 	static uint32_t minutePeriod = 33333;
+	uint32_t currentMillis = millis();
 
-	if (currentMillis - lastMillis > 1000) {
+	if (buttonPressed || (currentMillis - lastMillis > 1000)) {
+		buttonPressed = false;
 		led.toggle();
 		lastMillis = currentMillis;
 		DateTime now = rtc.now();
@@ -60,9 +68,7 @@ void loop() {
 		if (now.hour() >= 12) {
 			pinMode(NEUTRAL_PIN, OUTPUT);
 			digitalWrite(NEUTRAL_PIN, LOW);
-		}
-		else
-		{
+		} else {
 			pinMode(NEUTRAL_PIN, INPUT);
 		}
 
@@ -70,6 +76,7 @@ void loop() {
 		int index = now.hour() > 12 ? now.hour() - 13 : now.hour() - 1;
 		rpmPeriod = hourLows[index]
 				- ((hourLows[index] - hourLows[index + 1]) * hourFrac);
+
 		tach.setPeriod(rpmPeriod);
 
 		uint8_t minute = now.minute();
@@ -81,34 +88,95 @@ void loop() {
 		else
 			minutePeriod = 1000000.0 / ((float) minute * .59);
 
-		Serial.println(minute);
-		Serial.println(minutePeriod);
 		speed.setPeriod(minutePeriod);
-	}
 
-	uint32_t pressTime = getButton();
-
-	if (pressTime > 0) {
-		Serial.print("Button press time = ");
-		Serial.println(pressTime);
+		setFuel(now.minute());
 	}
 
 	tach.process();
 	speed.process();
+	buttonPressed = processButton();
 }
 
-uint32_t getButton() // this just returns how long the button was down, AFTER is goes high
-{
+void setFuel(uint8_t minutes) {
 
-	uint32_t currentMillis = millis();
-	uint32_t buttonPressMillis = currentMillis;
+	minutes = 2;
 
-	while (digitalRead(BUTTON_PIN) == LOW) {
-		delay(10);
-		buttonPressMillis = millis();
+	static uint8_t lastQuarter = 5;
+	uint8_t quarter;
+
+	if (minutes < 14 || minutes > 58)
+		quarter = 0;
+	else if (minutes < 29)
+		quarter = 1;
+	else if (minutes < 44)
+		quarter = 2;
+	else
+		quarter = 3;
+
+	Serial.println(quarter);
+
+	if (quarter != lastQuarter) {
+		lastQuarter = quarter;
+
+		for (uint8_t i = 0; i < 4; i++) {
+			if (quarter == i) {
+				digitalWrite(fuelPins[i], LOW);
+				pinMode(fuelPins[i], OUTPUT);
+			} else
+				pinMode(fuelPins[i], INPUT);
+		}
+
+	}
+}
+
+bool processButton() {
+
+	uint32_t buttonMs = getButton();
+// check for no status, and return right away
+	if (buttonMs == 0)
+		return false;
+
+	DateTime now = rtc.now();
+	uint8_t minute = now.minute();
+	uint8_t hour = now.hour();
+
+// < 1 second is an update to minutes
+	if (buttonMs < 1000) {
+
+		if (minute == 59)
+			minute = 0;
+		else
+			minute++;
+	} else {
+		if (hour == 23)
+			hour = 0;
+		else
+			hour++;
 	}
 
-	return buttonPressMillis - currentMillis;
+	rtc.adjust(DateTime(now.year(), now.month(), now.day(), hour, minute, 0));
+	return true;
+
+}
+
+uint32_t getButton() {
+
+	static bool buttonPressed = false;
+	static uint32_t buttonPressedMillis = 0;
+
+	if (!buttonPressed && digitalRead(BUTTON_PIN) == LOW) {
+		buttonPressed = true;
+		buttonPressedMillis = millis();
+		return 0;
+	}
+
+	if (buttonPressed && digitalRead(BUTTON_PIN) == HIGH) {
+		buttonPressed = false;
+		return buttonPressedMillis - millis();
+	}
+
+	return 0;
 }
 
 void printTime() {
