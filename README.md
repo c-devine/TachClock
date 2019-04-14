@@ -10,6 +10,8 @@ Project used to convert 12,000 RPM Tachometer into a 12 hour clock.  Based on wo
 
 ## Hardware
 
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/breadboard.png?raw=true" width="320" height="240">
+
 
 ## Built With
 

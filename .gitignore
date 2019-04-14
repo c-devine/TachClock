@@ -1,5 +1,6 @@
 Release/
 libraries/
 README.html
-/spec.d
+spec.d
 sloeber.ino.cpp
+.settings/
