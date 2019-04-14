@@ -72,9 +72,13 @@ void loop() {
 		}
 
 		float hourFrac = ((now.minute() * 60 + now.second()) / 3600.0);
-		int index = now.hour() > 12 ? now.hour() - 13 : now.hour() - 1;
-		rpmPeriod = hourLows[index]
-				- ((hourLows[index] - hourLows[index + 1]) * hourFrac);
+		int index = now.hour() < 13 ? now.hour() - 1 : now.hour() - 13;
+
+		if (now.hour() == 12 || now.hour() == 0)
+			rpmPeriod = hourLows[11];
+		else
+			rpmPeriod = hourLows[index]
+					- ((hourLows[index] - hourLows[index + 1]) * hourFrac);
 
 		tach.setPeriod(rpmPeriod);
 

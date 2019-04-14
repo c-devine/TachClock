@@ -2,4 +2,4 @@ Release/
 libraries/
 README.html
 /spec.d
-/sloeber.ino.cpp
+sloeber.ino.cpp
