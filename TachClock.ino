@@ -80,9 +80,6 @@ void loop() {
 		rpmPeriod = hourLows[index]
 				- ((hourLows[index] - hourLows[index + 1]) * hourFrac);
 
-		Serial.println(index);
-		Serial.println(rpmPeriod);
-
 		tach.setPeriod(rpmPeriod);
 
 		if (minute == 0)
