@@ -1134,7 +1134,7 @@ environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.BOARD_NA
 environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.BOARD_NAME/value=Adafruit Metro
 environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.COM_PORT/delimiter=;
 environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.COM_PORT/operation=replace
-environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.COM_PORT/value=
+environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.COM_PORT/value=COM22
 environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.ECLIPSE_LOCATION/delimiter=;
 environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.ECLIPSE_LOCATION/operation=replace
 environment/project/io.sloeber.core.toolChain.release.1609061515/JANTJE.ECLIPSE_LOCATION/value=

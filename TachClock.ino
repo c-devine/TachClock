@@ -11,8 +11,8 @@ RTC_DS1307 rtc;
 char daysOfTheWeek[7][12] = { "Sunday", "Monday", "Tuesday", "Wednesday",
 		"Thursday", "Friday", "Saturday" };
 
-uint32_t hourLows[] = { 61000, 31000, 20000, 14600, 11600, 9500, 7950, 6900,
-		6100, 5400, 4850, 4500 };
+uint32_t hourLows[] = { 300000, 61000, 31000, 20000, 14600, 11600, 9500, 7950,
+		6900, 6100, 5400, 4850, 4500 };
 uint8_t fuelPins[] = FUEL_PINS;
 
 void setup() {
@@ -63,26 +63,27 @@ void loop() {
 		led.toggle();
 		lastMillis = currentMillis;
 		DateTime now = rtc.now();
+		uint8_t hour = now.hour();
+		uint8_t minute = now.minute();
+		uint8_t second = now.second();
 
-		if (now.hour() >= 12) {
+		if (hour >= 12) {
 			pinMode(NEUTRAL_PIN, OUTPUT);
 			digitalWrite(NEUTRAL_PIN, LOW);
 		} else {
 			pinMode(NEUTRAL_PIN, INPUT);
 		}
 
-		float hourFrac = ((now.minute() * 60 + now.second()) / 3600.0);
-		int index = now.hour() < 13 ? now.hour() - 1 : now.hour() - 13;
+		float hourFrac = ((minute * 60 + second) / 3600.0);
+		int index = hour < 12 ? hour : hour - 12;
 
-		if (now.hour() == 12 || now.hour() == 0)
-			rpmPeriod = hourLows[11];
-		else
-			rpmPeriod = hourLows[index]
-					- ((hourLows[index] - hourLows[index + 1]) * hourFrac);
+		rpmPeriod = hourLows[index]
+				- ((hourLows[index] - hourLows[index + 1]) * hourFrac);
+
+		Serial.println(index);
+		Serial.println(rpmPeriod);
 
 		tach.setPeriod(rpmPeriod);
-
-		uint8_t minute = now.minute();
 
 		if (minute == 0)
 			minutePeriod = 2500000;
@@ -93,7 +94,7 @@ void loop() {
 
 		speed.setPeriod(minutePeriod);
 
-		setFuel(now.minute());
+		setFuel(minute);
 	}
 
 	tach.process();
