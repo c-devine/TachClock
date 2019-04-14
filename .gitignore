@@ -1,7 +1,5 @@
 Release/
 libraries/
 README.html
-.cproject
-.settings
 /spec.d
 /sloeber.ino.cpp
