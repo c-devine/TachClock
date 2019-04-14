@@ -1,8 +1,6 @@
 /*
  * Pwm.h
  *
- *  Created on: Mar 1, 2019
- *      Author: Chris
  */
 
 #ifndef FM_H_

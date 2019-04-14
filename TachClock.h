@@ -1,8 +1,6 @@
 /*
  * TachCock.h
  *
- *  Created on: Jan 24, 2019
- *      Author: Chris
  */
 
 #ifndef TACHCLOCK_H_

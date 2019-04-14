@@ -1,8 +1,6 @@
 /*
  * Pwm.cpp
  *
- *  Created on: Mar 1, 2019
- *      Author: Chris
  */
 
 #include "FM.h"
@@ -24,10 +22,12 @@ FM::~FM() {
 }
 
 void FM::setPeriod(uint32_t period) {
+
 	_period = period;
 }
 
 void FM::setPulseWidth(uint32_t pulseWidth) {
+
 	_pulseWidth = pulseWidth;
 }
 
@@ -47,6 +47,5 @@ void FM::process() {
 		_on = false;
 		return;
 	}
-
 }
 

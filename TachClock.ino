@@ -24,10 +24,9 @@ void setup() {
 	pinMode(NEUTRAL_PIN, INPUT);
 
 	// set up the fuel pins
-	for (uint8_t i = 0; i< 4; i ++) {
+	for (uint8_t i = 0; i < 4; i++) {
 		pinMode(fuelPins[i], INPUT);
 	}
-
 
 	led.on();
 
@@ -82,11 +81,11 @@ void loop() {
 		uint8_t minute = now.minute();
 
 		if (minute == 0)
-			minutePeriod = 2000000;
+			minutePeriod = 2500000;
 		else if (minute == 1)
-			minutePeriod = 1600000;
+			minutePeriod = 1500000;
 		else
-			minutePeriod = 1000000.0 / ((float) minute * .59);
+			minutePeriod = 1000000.0 / ((float) minute * .46);
 
 		speed.setPeriod(minutePeriod);
 
@@ -100,8 +99,6 @@ void loop() {
 
 void setFuel(uint8_t minutes) {
 
-	minutes = 2;
-
 	static uint8_t lastQuarter = 5;
 	uint8_t quarter;
 
@@ -114,8 +111,6 @@ void setFuel(uint8_t minutes) {
 	else
 		quarter = 3;
 
-	Serial.println(quarter);
-
 	if (quarter != lastQuarter) {
 		lastQuarter = quarter;
 
@@ -126,14 +121,13 @@ void setFuel(uint8_t minutes) {
 			} else
 				pinMode(fuelPins[i], INPUT);
 		}
-
 	}
 }
 
 bool processButton() {
 
 	uint32_t buttonMs = getButton();
-// check for no status, and return right away
+	// check for no status, and return right away
 	if (buttonMs == 0)
 		return false;
 
@@ -141,9 +135,8 @@ bool processButton() {
 	uint8_t minute = now.minute();
 	uint8_t hour = now.hour();
 
-// < 1 second is an update to minutes
+	// < 1 second is an update to minutes
 	if (buttonMs < 1000) {
-
 		if (minute == 59)
 			minute = 0;
 		else
@@ -173,13 +166,14 @@ uint32_t getButton() {
 
 	if (buttonPressed && digitalRead(BUTTON_PIN) == HIGH) {
 		buttonPressed = false;
-		return buttonPressedMillis - millis();
+		return millis() - buttonPressedMillis;
 	}
 
 	return 0;
 }
 
 void printTime() {
+
 	DateTime now = rtc.now();
 
 	Serial.print(now.year(), DEC);
