@@ -137,8 +137,8 @@ bool processButton() {
 	uint8_t minute = now.minute();
 	uint8_t hour = now.hour();
 
-	// < 1 second is an update to minutes
-	if (buttonMs < 1000) {
+	// < .5 second is an update to minutes
+	if (buttonMs < 500) {
 		if (minute == 59)
 			minute = 0;
 		else
