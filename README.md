@@ -24,7 +24,8 @@ Submit a pull request if interested in contributing.
 
 ## Authors
 
-* **Chris** - *Initial work* - [c-devine](https://github.com/c-devine)
+* **mrbigbusiness** - *Initial code* - [mrbigbusiness](https://github.com/mrbigbusiness)
+* **Chris** - *Updates for specific hardware* - [c-devine](https://github.com/c-devine)
 
 
 ## License
