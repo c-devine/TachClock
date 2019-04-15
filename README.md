@@ -47,7 +47,7 @@ OpAmp | $0.45 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-elec
 
 Metro Mini was used because it can handle 12V in.
 
-Also, to move the components off of the bread board and into the case (since I already had the trough hole components, I made and ordred a 2 layer board from OSH Park to keep things cleaner.  
+Also, to move the components off of the bread board and into the case (since I already had the through hole components, I made and ordred a 2 layer board from OSH Park to keep things cleaner.  
 
 
 [OSH Park](https://oshpark.com/shared_projects/GJOlpiep) 
