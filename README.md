@@ -25,6 +25,7 @@ The other lights on the tachomter are just triggered by setting the correspondin
 ## Snapshots
 
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/breadboard.png?raw=true" width="320" height="240">
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/final.png?raw=true" width="320" height="240">
 
 *add final result*
 *add case model*
