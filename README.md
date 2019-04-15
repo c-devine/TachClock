@@ -7,7 +7,7 @@ Project used to convert 12,000 RPM Tachometer into a 12 hour clock.  Based on wo
 The goal of the project was to convert a 12,000 RPM tachometer (found in a number of places, including [Amazon](https://www.amazon.com/gp/product/B0748C46FD/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)) into a working "clock". In this case, the hours are represented by the RPM dial, and the minutes are displayed as the speed.  The Neutral light indicates AM/PM (on for PM).  The fuel guage changes gradually over time.
 
 ### Tachometer Dial
-After a bunch of trial and error with 0-5v logic level, I finally figured out that the RPM guage needs an **AC** signal, with both negative and positive logic levels. The below diagrams show the creation of the negative rail, and the switching needed to produce the signal.
+After a bunch of trial and error with 0-5v and 0=12v logic levels, I finally figured out that the RPM guage needs an **AC** signal(!), with both negative and positive logic levels. The below diagrams show the creation of the negative rail, and the switching needed to produce the signal.
 
 *ToDo* add negative rail and op amp diagrams
 
@@ -17,6 +17,8 @@ Speed on this tachometer is determined by the frequency of pulses being fed into
 
 ### Fuel Dislpay
 The fuel level on this tachometer corresponds to the amount of resistance between the fuel line and gound.  Apparently, very little (but at least some) resistance = full tank, and lot of resistance = empty tank.
+
+R1 = 10, R2 = 22, R3 = 15, R4  = 22
 
 ### Neutral, Gear, Turn Signals
 The other lights on the tachomter are just turned on by setting the corresponding line to ground.  Most of the lights, and the gear display works like this.
@@ -34,7 +36,7 @@ The other lights on the tachomter are just turned on by setting the correspondin
 
 Component | Price | Location
 ----------|-------|---------
-Tachometer | $29.99 | [Amazon](https://www.amazon.com/gp/product/B0748C46FD/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1))
+Tachometer | $29.99 | [Amazon](https://www.amazon.com/gp/product/B0748C46FD/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)
 Push Button | $1.99 | [Adafruit](https://www.adafruit.com/product/1477)
 RTC | $7.50 | [Adafruit](https://www.adafruit.com/product/3296)
 12V Power Supply | $8.95 | [Adafruit](https://www.adafruit.com/product/798)
@@ -44,6 +46,11 @@ Charge Pump | $1.74 | [DigiKey](https://www.digikey.com/product-detail/en/renesa
 OpAmp | $0.45 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
 
 Metro Mini was used because it can handle 12V in.
+
+Also, to move the components off of the bread board and into the case (since I already had the trough hole components, I made and ordred a 2 layer board from OSH Park to keep things cleaner.  
+
+
+[OSH Park](https://oshpark.com/shared_projects/GJOlpiep) ![board](https://oshpark.com/assets/badge-5b7ec47045b78aef6eb9d83b3bac6b1920de805e9a0c227658eac6e19a045b9c.png")
 
 ## Built With
 
