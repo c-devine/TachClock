@@ -51,7 +51,7 @@ Also, to move the components off of the bread board and into the case (since I a
 
 
 [OSH Park](https://oshpark.com/shared_projects/GJOlpiep) 
-<img src="https://644db4de3505c40a0444-327723bce298e3ff5813fb42baeefbaa.ssl.cf1.rackcdn.com/4927f80b1c757f383ed855628655d3bb.png" width="320" height="240">
+<img src="https://644db4de3505c40a0444-327723bce298e3ff5813fb42baeefbaa.ssl.cf1.rackcdn.com/4927f80b1c757f383ed855628655d3bb.png" width="200" height="110">
 
 
 
