@@ -50,7 +50,9 @@ Metro Mini was used because it can handle 12V in.
 Also, to move the components off of the bread board and into the case (since I already had the trough hole components, I made and ordred a 2 layer board from OSH Park to keep things cleaner.  
 
 
-[OSH Park](https://oshpark.com/shared_projects/GJOlpiep) ![board](https://oshpark.com/assets/badge-5b7ec47045b78aef6eb9d83b3bac6b1920de805e9a0c227658eac6e19a045b9c.png)
+[OSH Park](https://oshpark.com/shared_projects/GJOlpiep) 
+<img src="https://644db4de3505c40a0444-327723bce298e3ff5813fb42baeefbaa.ssl.cf1.rackcdn.com/4927f80b1c757f383ed855628655d3bb.png" width="320" height="240">
+
 
 
 ## Built With
