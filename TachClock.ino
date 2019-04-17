@@ -11,6 +11,7 @@ RTC_DS1307 rtc;
 char daysOfTheWeek[7][12] = { "Sunday", "Monday", "Tuesday", "Wednesday",
 		"Thursday", "Friday", "Saturday" };
 
+// delays specific to each tachometer
 uint32_t hourLows[] = { 300000, 61000, 31000, 20000, 14600, 11600, 9500, 7950,
 		6900, 6100, 5400, 4850, 4500 };
 uint8_t fuelPins[] = FUEL_PINS;
@@ -67,6 +68,7 @@ void loop() {
 		uint8_t minute = now.minute();
 		uint8_t second = now.second();
 
+		// set the AM / PM display
 		if (hour >= 12) {
 			pinMode(NEUTRAL_PIN, OUTPUT);
 			digitalWrite(NEUTRAL_PIN, LOW);
@@ -82,6 +84,8 @@ void loop() {
 
 		tach.setPeriod(rpmPeriod);
 
+		// special handling of 0 and 1 minutes was needed, all other times seemed to work well.
+		// the .46 factor seems to apply to this tachometer only.
 		if (minute == 0)
 			minutePeriod = 2500000;
 		else if (minute == 1)
@@ -104,6 +108,7 @@ void setFuel(uint8_t minutes) {
 	static uint8_t lastQuarter = 5;
 	uint8_t quarter;
 
+	// change the fuel gauge display.
 	if (minutes < 14 || minutes > 58)
 		quarter = 0;
 	else if (minutes < 29)

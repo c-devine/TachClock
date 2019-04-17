@@ -1,5 +1,4 @@
 #include "Led.h"
-#include "math.h"
 
 Led::Led(uint8_t pin) {
 	_on = false;
