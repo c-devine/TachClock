@@ -45,15 +45,22 @@ Metro Mini | $12.50 | [Adafruit](https://www.adafruit.com/product/2590)
 Charge Pump | $1.74 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
 OpAmp | $0.45 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
 
+Resistors: 10 ohm, 22 ohm (x2), 15 ohm, 1K (x2), 10K
+Capasitors: 10uf (x2)
 Metro Mini was used because it can handle 12V in.
 
 Also, to move the components off of the bread board and into the case (since I already had the through hole components, I made and ordred a 2 layer board from OSH Park to keep things cleaner.  
 
 
 [OSH Park](https://oshpark.com/shared_projects/GJOlpiep) 
-<img src="https://644db4de3505c40a0444-327723bce298e3ff5813fb42baeefbaa.ssl.cf1.rackcdn.com/4927f80b1c757f383ed855628655d3bb.png" width="200" height="110">
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_front.png?raw=true" width="200" height="110">
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_back.png?raw=true" width="200" height="110">
 
+## Case Model
 
+The case model was built with Fusion 360, and exported to stl files.  See the first release for the attached files.  Updates to the model include: 1) the opening is a bit too big for the tachometer.  I ended up wrapping the tachometer with a few wraps of tape to get it to fit snugly.  2) The bottom, or base, needs a lot of work to fit right.  
+
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/model.png?raw=true" width="200" height="110">
 
 ## Built With
 
