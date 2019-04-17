@@ -7,7 +7,7 @@ Project used to convert 12,000 RPM Tachometer into a 12 hour clock.  Based on wo
 The goal of the project was to convert a 12,000 RPM tachometer (found in a number of places, including [Amazon](https://www.amazon.com/gp/product/B0748C46FD/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)) into a working "clock". In this case, the hours are represented by the RPM dial, and the minutes are displayed as the speed.  The Neutral light indicates AM/PM (on for PM).  The fuel guage changes gradually over time.
 
 ### Tachometer Dial
-After a bunch of trial and error with 0-5v and 0=12v logic levels, I finally figured out that the RPM guage needs an **AC** signal(!), with both negative and positive logic levels. The below diagrams show the creation of the negative rail, and the switching needed to produce the signal.
+After a bunch of trial and error with 0-5v and 0-12v logic levels, I finally figured out that the RPM guage needs an **AC** signal(!), with both negative and positive logic levels. The below diagrams show the creation of the negative rail, and the switching needed to produce the signal.
 
 *ToDo* add negative rail and op amp diagrams
 
@@ -29,8 +29,6 @@ The other lights on the tachomter are just turned on by setting the correspondin
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/breadboard.png?raw=true" width="320" height="240">
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/final.png?raw=true" width="320" height="240">
 
-*add final result*
-*add case model*
 
 ## Hardware
 
@@ -55,12 +53,14 @@ Also, to move the components off of the bread board and into the case (since I a
 [OSH Park](https://oshpark.com/shared_projects/GJOlpiep) 
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_front.png?raw=true" width="200" height="110">
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_back.png?raw=true" width="200" height="110">
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/schematic.png?raw=true" width="114" height="110">
+
 
 ## Case Model
 
 The case model was built with Fusion 360, and exported to stl files.  See the first release for the attached files.  Updates to the model include: 1) the opening is a bit too big for the tachometer.  I ended up wrapping the tachometer with a few wraps of tape to get it to fit snugly.  2) The bottom, or base, needs a lot of work to fit right.  
 
-<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/model.png?raw=true" width="200" height="110">
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/model.png?raw=true" width="200" height="130">
 
 ## Built With
 
