@@ -2,6 +2,8 @@
 
 Project used to convert 12,000 RPM Tachometer into a 12 hour clock.  Based on work completed by mrbigbusiness's project [tachometer-clock](https://github.com/mrbigbusiness/tachometer-clock).
 
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/final.png?raw=true" width="320" height="240">
+
 ## Overview
 
 The goal of the project was to convert a 12,000 RPM tachometer (found in a number of places, including [Amazon](https://www.amazon.com/gp/product/B0748C46FD/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)) into a working "clock". In this case, the hours are represented by the RPM dial, and the minutes are displayed as the speed.  The Neutral light indicates AM/PM (on for PM).  The fuel guage changes gradually over time.
@@ -27,8 +29,6 @@ The other lights on the tachomter are just turned on by setting the correspondin
 ## Snapshots
 
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/breadboard.png?raw=true" width="320" height="240">
-<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/final.png?raw=true" width="320" height="240">
-
 
 ## Hardware
 
