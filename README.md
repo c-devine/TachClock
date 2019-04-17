@@ -57,6 +57,7 @@ Also, to move the components off of the bread board and into the case (since I a
 
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_front.png?raw=true" width="200" height="110">
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_back.png?raw=true" width="200" height="110">
+<img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/completed.png?raw=true" width="200" height="110">
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/schematic.png?raw=true" width="141" height="110">
 
 
