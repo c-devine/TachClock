@@ -18,7 +18,7 @@ After a bunch of trial and error with 0-5v and 0-12v logic levels, I finally fig
 Speed on this tachometer is determined by the frequency of pulses being fed into the speed pin.  The shorter the duration between pulses, the faster the speed, or the faster the wheel is rotating.  A simple PWM or variable 0-5v pulse is good enough to set the speed.
 
 ### Fuel Dislpay
-The fuel level on this tachometer corresponds to the amount of resistance between the fuel line and gound.  Apparently, very little (but at least some) resistance = full tank, and lot of resistance = empty tank.
+The fuel level on this tachometer corresponds to the amount of resistance between the fuel line and ground.  Apparently, very little (but at least some) resistance = full tank, and lot of resistance = empty tank.
 
 R1 = 10, R2 = 22, R3 = 15, R4  = 22
 
