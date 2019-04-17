@@ -49,7 +49,7 @@ Capasitors: 10uf (x2)
 
 Metro Mini was used because it can handle 12V in.
 
-Also, to move the components off of the bread board and into the case (since I already had the through hole components, I created a 2 layer board to keep things cleaner.  
+Also, to move the components off of the bread board and into the case (since I already had the through hole components), I created a 2 layer board to keep things cleaner.  
 
 
 [OSH Park](https://oshpark.com/shared_projects/GJOlpiep) 
@@ -62,7 +62,7 @@ Also, to move the components off of the bread board and into the case (since I a
 
 ## Case Model
 
-The case model was built with Fusion 360, and exported to stl files.  See the first release for the attached files.  Updates to the model include: 1) the opening is a bit too big for the tachometer.  I ended up wrapping the tachometer with a few wraps of tape to get it to fit snugly.  2) The bottom, or base, needs a lot of work to fit right.  
+The case model was built with Fusion 360, and exported to stl files.  See the first release for the attached files.  Updates needed to the model include: 1) the opening is a bit too big for the tachometer.  I ended up wrapping the tachometer with a few wraps of tape to get it to fit snugly.  2) The bottom, or base, needs a lot of work to fit right.  
 
 <img src="https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/model.png?raw=true" width="200" height="130">
 
@@ -86,7 +86,8 @@ Submit a pull request if interested in contributing.
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+Please use at your own risk since this is not a certified or even tested project!
 
 ## Acknowledgments
 
