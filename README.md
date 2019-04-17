@@ -44,7 +44,9 @@ Charge Pump | $1.74 | [DigiKey](https://www.digikey.com/product-detail/en/renesa
 OpAmp | $0.45 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
 
 Resistors: 10 ohm, 22 ohm (x2), 15 ohm, 1K (x2), 10K
+
 Capasitors: 10uf (x2)
+
 Metro Mini was used because it can handle 12V in.
 
 Also, to move the components off of the bread board and into the case (since I already had the through hole components, I created a 2 layer board to keep things cleaner.  
