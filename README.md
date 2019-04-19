@@ -15,7 +15,7 @@ A [ICL7660S](https://www.digikey.com/product-detail/en/renesas-electronics-ameri
 
  ![chargepump](https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/chargepump.png?raw=true")
 
-an [OpAmp](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918) was used to create the square full swing square wave (design based on this [Quora](https://www.quora.com/How-can-you-create-an-AC-signal-from-DC-with-the-Arduino-Uno-Is-PWM-considered-an-AC-signal-since-it-produces-a-square-wave)article):
+an [LM358 OpAmp](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918) was used to create the square full swing square wave (design based on this [Quora](https://www.quora.com/How-can-you-create-an-AC-signal-from-DC-with-the-Arduino-Uno-Is-PWM-considered-an-AC-signal-since-it-produces-a-square-wave) article:
 
  ![chargepump](https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/opamp.png?raw=true")
  
@@ -49,7 +49,7 @@ RTC | $7.50 | [Adafruit](https://www.adafruit.com/product/3296)
 Barrel Jack | $2.95 | [Adafruit](https://www.adafruit.com/product/610)
 Metro Mini | $12.50 | [Adafruit](https://www.adafruit.com/product/2590)
 Voltage Converter | $1.74 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
-OpAmp | $0.45 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
+LM358 OpAmp | $0.45 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
 
 Resistors: 10 ohm, 22 ohm (x2), 15 ohm, 1K (x2), 10K
 
