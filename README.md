@@ -11,7 +11,15 @@ The goal of the project was to convert a 12,000 RPM tachometer (found in a numbe
 ### Tachometer Dial
 After a bunch of trial and error with 0-5v and 0-12v logic levels, I finally figured out that the RPM guage needs an **AC** signal(!), with both negative and positive logic levels. The below diagrams show the creation of the negative rail, and the switching needed to produce the signal.
 
-*ToDo* add negative rail and op amp diagrams
+A [ICL7660S] ((https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918) voltage converter was used to create the negative voltage rail.
+
+ ![chargepump](https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_back.png?raw=true")
+
+an [OpAmp](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918) was used to create the square full swing square wave (design based on this [Quora](https://www.quora.com/How-can-you-create-an-AC-signal-from-DC-with-the-Arduino-Uno-Is-PWM-considered-an-AC-signal-since-it-produces-a-square-wave)article):
+
+ ![chargepump](https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/opamp.png?raw=true")
+ 
+
 
 
 ### Speed Display
@@ -40,7 +48,7 @@ RTC | $7.50 | [Adafruit](https://www.adafruit.com/product/3296)
 12V Power Supply | $8.95 | [Adafruit](https://www.adafruit.com/product/798)
 Barrel Jack | $2.95 | [Adafruit](https://www.adafruit.com/product/610)
 Metro Mini | $12.50 | [Adafruit](https://www.adafruit.com/product/2590)
-Charge Pump | $1.74 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
+Voltage Converter | $1.74 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
 OpAmp | $0.45 | [DigiKey](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918)
 
 Resistors: 10 ohm, 22 ohm (x2), 15 ohm, 1K (x2), 10K
