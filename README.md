@@ -11,9 +11,9 @@ The goal of the project was to convert a 12,000 RPM tachometer (found in a numbe
 ### Tachometer Dial
 After a bunch of trial and error with 0-5v and 0-12v logic levels, I finally figured out that the RPM guage needs an **AC** signal(!), with both negative and positive logic levels. The below diagrams show the creation of the negative rail, and the switching needed to produce the signal.
 
-A [ICL7660S] ((https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918) voltage converter was used to create the negative voltage rail.
+A [ICL7660S](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918) voltage converter was used to create the negative voltage rail.
 
- ![chargepump](https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/board_back.png?raw=true")
+ ![chargepump](https://raw.githubusercontent.com/c-devine/TachClock/snapshots/assets/img/chargepump.png?raw=true")
 
 an [OpAmp](https://www.digikey.com/product-detail/en/renesas-electronics-america-inc/ICL7660ACPAZ/ICL7660ACPAZ-ND/1034918) was used to create the square full swing square wave (design based on this [Quora](https://www.quora.com/How-can-you-create-an-AC-signal-from-DC-with-the-Arduino-Uno-Is-PWM-considered-an-AC-signal-since-it-produces-a-square-wave)article):
 
